@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PORTFILE · ISC</title>
-  <meta name="description" content="Portafolio de un Ingeniero en Sistemas Computacionales. Arquitectura, lógica y construcción de sistemas." />
+  <title>PORTFILE // DIEGO ÁNGEL ZÁRATE VÁZQUEZ · CS STUDENT (7TH SEMESTER)</title>
+  <meta name="description" content="Portfolio of Diego Ángel Zárate Vázquez — 7th-semester Computer Systems Engineering student building backend services, language tooling, and student research in applied ML." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -999,6 +999,462 @@
     .footer-link:hover { color: var(--white); }
 
     /* ════════════════════════════════════════
+       EXPERIENCE TIMELINE
+    ════════════════════════════════════════ */
+    #experiencia {
+      padding-top: clamp(4rem, 10vh, 8rem);
+      padding-bottom: clamp(4rem, 10vh, 8rem);
+      border-bottom: 1px solid var(--grey-20);
+    }
+    .timeline {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 108px;
+      width: 1px;
+      background: var(--grey-20);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 0;
+      position: relative;
+    }
+    .timeline-item + .timeline-item { border-top: 1px solid var(--grey-20); }
+    .timeline-left {
+      padding: clamp(1.25rem, 2.5vw, 2rem) 1.5rem clamp(1.25rem, 2.5vw, 2rem) 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-end;
+      position: relative;
+    }
+    .timeline-left::after {
+      content: '';
+      position: absolute;
+      right: -5px; top: clamp(1.25rem, 2.5vw, 2rem);
+      width: 9px; height: 9px;
+      background: var(--black);
+      border: 1px solid var(--grey-60);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-item:first-child .timeline-left::after {
+      background: var(--white);
+      border-color: var(--white);
+    }
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+      text-align: right;
+    }
+    .timeline-date.is-current { color: var(--white); }
+    .timeline-right {
+      padding: clamp(1.25rem, 2.5vw, 2rem) 0 clamp(1.25rem, 2.5vw, 2rem) 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .timeline-role {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .timeline-company {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .timeline-company .badge {
+      font-size: 8px;
+      padding: 2px 7px;
+      border: 1px solid var(--grey-28);
+      color: var(--grey-60);
+      letter-spacing: 0.12em;
+    }
+    .timeline-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--grey-80);
+      max-width: 60ch;
+      margin-top: 0.25rem;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.5rem;
+    }
+    .timeline-tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border: 1px solid var(--grey-28);
+      color: var(--grey-60);
+    }
+
+    /* ════════════════════════════════════════
+       RESEARCH
+    ════════════════════════════════════════ */
+    #investigaciones {
+      padding-top: clamp(4rem, 10vh, 8rem);
+      padding-bottom: clamp(4rem, 10vh, 8rem);
+      border-bottom: 1px solid var(--grey-20);
+    }
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 0;
+      border-left: 1px solid var(--grey-20);
+      border-top: 1px solid var(--grey-20);
+      margin-top: 3rem;
+    }
+    .research-card {
+      border-right: 1px solid var(--grey-20);
+      border-bottom: 1px solid var(--grey-20);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      transition: background 80ms;
+    }
+    .research-card:hover { background: var(--grey-10); }
+    .research-card__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--grey-20);
+      padding-bottom: 0.85rem;
+    }
+    .research-card__id {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+    }
+    .research-card__status {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid var(--grey-28);
+      color: var(--grey-60);
+      white-space: nowrap;
+    }
+    .research-card__status.active {
+      border-color: var(--grey-60);
+      color: var(--white);
+    }
+    .research-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .research-card__body {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--grey-80);
+    }
+    .research-card__meta {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--grey-20);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: var(--grey-60);
+    }
+    .research-card__meta strong { color: var(--grey-aa); }
+
+    /* ════════════════════════════════════════
+       INTEREST AREAS STRIP
+    ════════════════════════════════════════ */
+    .interest-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--grey-20);
+      margin-bottom: 3rem;
+    }
+    .interest-cell {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      border-right: 1px solid var(--grey-20);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 80ms;
+    }
+    .interest-cell:last-child { border-right: none; }
+    .interest-cell:hover { background: var(--grey-10); }
+    .interest-cell__num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--grey-60);
+    }
+    .interest-cell__title {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .interest-cell__body {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--grey-80);
+    }
+    .interest-cell__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    .interest-tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border: 1px solid var(--grey-28);
+      color: var(--grey-60);
+    }
+
+    @media (max-width: 1024px) {
+      .interest-strip { grid-template-columns: 1fr; }
+      .interest-cell { border-right: none; border-bottom: 1px solid var(--grey-20); }
+      .interest-cell:last-child { border-bottom: none; }
+      .timeline::before { left: 80px; }
+      .timeline-item { grid-template-columns: 80px 1fr; }
+      .research-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .timeline::before { display: none; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-left { align-items: flex-start; padding-bottom: 0.25rem; }
+      .timeline-left::after { display: none; }
+      .timeline-right { padding-left: 0; padding-top: 0.5rem; }
+    }
+
+    /* ════════════════════════════════════════
+       EDITORIAL / MANGA BOOK AESTHETICS & ACCENTS
+    ════════════════════════════════════════ */
+    /* Barra superior de lectura estilo volumen / tomo */
+    #reading-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--white);
+      z-index: 2000;
+      pointer-events: none;
+      transition: width 0.1s linear;
+    }
+
+    /* Screentone sutil (trama de puntos editorial) */
+    .screentone-bg {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+
+    /* Marcas de registro / imprenta en esquinas */
+    .book-panel {
+      position: relative;
+      border: 1px solid var(--grey-20);
+      background: var(--black);
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .book-panel:hover {
+      border-color: var(--grey-60);
+    }
+    .corner-mark {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      pointer-events: none;
+      border-color: var(--white);
+    }
+    .corner-tl { top: -1px; left: -1px; border-top: 2px solid var(--white); border-left: 2px solid var(--white); }
+    .corner-tr { top: -1px; right: -1px; border-top: 2px solid var(--white); border-right: 2px solid var(--white); }
+    .corner-bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--white); border-left: 2px solid var(--white); }
+    .corner-br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--white); border-right: 2px solid var(--white); }
+
+    /* Indicador de folio / capítulo en vertical */
+    .vertical-folio {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+      user-select: none;
+    }
+
+    /* ════════════════════════════════════════
+       ECOSISTEMA DIGITAL / ENLACES WEB
+    ════════════════════════════════════════ */
+    #ecosistema {
+      padding-top: clamp(4rem, 10vh, 8rem);
+      padding-bottom: clamp(4rem, 10vh, 8rem);
+      border-bottom: 1px solid var(--grey-20);
+    }
+    .web-network-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .web-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 2.5vw, 2.2rem);
+      border: 1px solid var(--grey-20);
+      background: var(--grey-10);
+      position: relative;
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, color 120ms ease;
+      cursor: pointer;
+    }
+    .web-card:hover {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+      transform: translate(-3px, -3px);
+      box-shadow: 4px 4px 0 var(--grey-60);
+    }
+    .web-card:hover .web-card__idx { color: var(--grey-40); }
+    .web-card:hover .web-card__name { color: var(--black); }
+    .web-card:hover .web-card__role { color: var(--grey-20); }
+    .web-card:hover .web-card__desc { color: var(--grey-20); }
+    .web-card:hover .web-card__action { border-color: var(--black); color: var(--black); background: var(--white); }
+    .web-card:hover .web-card__tag { border-color: var(--grey-40); color: var(--grey-40); }
+
+    .web-card__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--grey-20);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .web-card__idx {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+      transition: color 120ms ease;
+    }
+    .web-card__status {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border: 1px solid var(--grey-28);
+      color: var(--white);
+    }
+    .web-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+      transition: color 120ms ease;
+    }
+    .web-card__role {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-80);
+      margin-bottom: 0.75rem;
+      transition: color 120ms ease;
+    }
+    .web-card__desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--grey-aa);
+      margin-bottom: 1.5rem;
+      transition: color 120ms ease;
+    }
+    .web-card__foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--grey-20);
+      margin-top: auto;
+    }
+    .web-card__tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .web-card__tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border: 1px solid var(--grey-28);
+      color: var(--grey-60);
+      transition: border-color 120ms ease, color 120ms ease;
+    }
+    .web-card__action {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px solid var(--grey-40);
+      color: var(--white);
+      transition: all 120ms ease;
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════
        REVEAL ANIMATIONS
     ════════════════════════════════════════ */
     .reveal {
@@ -1045,6 +1501,7 @@
       .contact-body { grid-template-columns: 1fr; }
       .project-row { grid-template-columns: 80px 1fr 1fr; }
       .project-row__link { display: none; }
+      .web-network-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -1068,36 +1525,39 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">[ SALTAR AL CONTENIDO ]</a>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">[ SKIP TO CONTENT ]</a>
 
   <!-- ══════════ NAVIGATION ══════════ -->
   <header>
-    <nav id="site-nav" role="navigation" aria-label="Navegación principal">
+    <nav id="site-nav" role="navigation" aria-label="Main Navigation">
       <!-- Logo -->
-      <a class="nav-logo" href="#" data-section="hero" aria-label="Inicio">
+      <a class="nav-logo" href="#" data-section="hero" aria-label="Home">
         <span class="nav-logo__name">PORTFILE</span>
-        <span class="nav-logo__sub">ISC · Ing. en Sistemas Computacionales · v2.5.0</span>
+        <span class="nav-logo__sub">CS STUDENT (7TH SEMESTER) · BACKEND &amp; SYSTEMS</span>
       </a>
 
       <!-- Desktop links -->
       <ul class="nav-links" role="list">
-        <li class="nav-links__item"><a href="#hero"          data-section="hero"          class="is-active">HOME</a></li>
-        <li class="nav-links__item"><a href="#manifiesto"    data-section="manifiesto">MANIFIESTO</a></li>
-        <li class="nav-links__item"><a href="#proyectos"     data-section="proyectos">PROYECTOS</a></li>
-        <li class="nav-links__item"><a href="#conocimientos" data-section="conocimientos">STACK</a></li>
-        <li class="nav-links__item"><a href="#sobre-mi"      data-section="sobre-mi">SOBRE MÍ</a></li>
-        <li class="nav-links__item"><a href="#contacto"      data-section="contacto">CONTACTO</a></li>
+        <li class="nav-links__item"><a href="#hero"             data-section="hero"             class="is-active">HOME</a></li>
+        <li class="nav-links__item"><a href="#proyectos"        data-section="proyectos">PROJECTS</a></li>
+        <li class="nav-links__item"><a href="#experiencia"      data-section="experiencia">EXPERIENCE</a></li>
+        <li class="nav-links__item"><a href="#investigaciones"  data-section="investigaciones">RESEARCH</a></li>
+        <li class="nav-links__item"><a href="#conocimientos"    data-section="conocimientos">SKILLS &amp; STACK</a></li>
+        <li class="nav-links__item"><a href="#ecosistema"       data-section="ecosistema">ECOSYSTEM</a></li>
+        <li class="nav-links__item"><a href="#sobre-mi"         data-section="sobre-mi">ABOUT ME</a></li>
+        <li class="nav-links__item"><a href="#contacto"         data-section="contacto">CONTACT</a></li>
       </ul>
 
       <!-- CTA + hamburger -->
       <div class="nav-cta">
-        <a class="nav-cta__btn" href="#contacto">[ INICIAR DIÁLOGO ]</a>
+        <a class="nav-cta__btn" href="#contacto">[ GET IN TOUCH ]</a>
         <button
           class="nav-hamburger"
           id="hamburger"
           aria-expanded="false"
           aria-controls="nav-drawer"
-          aria-label="Abrir menú"
+          aria-label="Open menu"
         >
           <span></span><span></span><span></span>
         </button>
@@ -1106,19 +1566,21 @@
 
     <!-- Mobile drawer -->
     <div class="nav-drawer" id="nav-drawer" role="menu">
-      <a href="#hero"          data-section="hero"          class="is-active" role="menuitem">HOME</a>
-      <a href="#manifiesto"    data-section="manifiesto"    role="menuitem">MANIFIESTO</a>
-      <a href="#proyectos"     data-section="proyectos"     role="menuitem">PROYECTOS</a>
-      <a href="#conocimientos" data-section="conocimientos" role="menuitem">STACK</a>
-      <a href="#sobre-mi"      data-section="sobre-mi"      role="menuitem">SOBRE MÍ</a>
-      <a href="#contacto"      data-section="contacto"      role="menuitem">CONTACTO</a>
+      <a href="#hero"             data-section="hero"             class="is-active" role="menuitem">HOME</a>
+      <a href="#proyectos"        data-section="proyectos"        role="menuitem">PROJECTS</a>
+      <a href="#experiencia"      data-section="experiencia"      role="menuitem">EXPERIENCE</a>
+      <a href="#investigaciones"  data-section="investigaciones"  role="menuitem">RESEARCH</a>
+      <a href="#conocimientos"    data-section="conocimientos"    role="menuitem">SKILLS &amp; STACK</a>
+      <a href="#ecosistema"       data-section="ecosistema"       role="menuitem">ECOSYSTEM</a>
+      <a href="#sobre-mi"         data-section="sobre-mi"         role="menuitem">ABOUT ME</a>
+      <a href="#contacto"         data-section="contacto"         role="menuitem">CONTACT</a>
     </div>
   </header>
 
   <main id="main-content">
 
     <!-- ══════════ HERO ══════════ -->
-    <section id="hero" aria-label="Inicio">
+    <section id="hero" aria-label="Home">
       <div class="hero-inner section">
 
         <!-- 12-column grid overlay -->
@@ -1132,275 +1594,617 @@
         <div class="hero-telemetry" aria-hidden="true">
           <span class="hero-telemetry__status">
             <span class="hero-telemetry__ping"></span>
-            SYS_REF: 0x7E3A9F // DISPONIBLE
+            SYS_REF: 0x7E3A9F // OPEN TO JUNIOR &amp; INTERN ROLES
           </span>
           <span class="hero-telemetry__sep">/</span>
-          <span>LAT: 19°26′N · LON: 99°07′W</span>
+          <span>LAT: 19°26′N · LON: 99°07′W · MEXICO</span>
           <span class="hero-telemetry__sep">/</span>
           <span>UTC: <span id="utc-clock">--:--:--</span></span>
           <span class="hero-telemetry__sep">/</span>
-          <span>KERNEL: LINUX_RT_6.8</span>
+          <span>STATUS: 7TH SEMESTER CS STUDENT</span>
         </div>
 
         <!-- Headline -->
         <h1 class="hero-headline">
-          <span class="hero-headline__solid">ARQUITECTURA</span>
-          <span class="hero-headline__outline" aria-hidden="true">DE SISTEMAS</span>
-          <span class="hero-headline__solid" style="font-size: clamp(38px, 7.5vw, 108px);">Y RIGOR FORMAL</span>
+          <span class="hero-headline__solid">BACKEND</span>
+          <span class="hero-headline__outline" aria-hidden="true">DEVELOPMENT</span>
+          <span class="hero-headline__solid" style="font-size: clamp(38px, 7.5vw, 108px);">&amp; LANGUAGE TOOLS</span>
         </h1>
 
         <!-- Footer row -->
         <div class="hero-foot">
           <div>
             <p class="hero-foot__desc">
-              Ingeniería de sistemas computacionales: diseño de infraestructuras críticas, arquitecturas distribuidas y software con rigor formal. Rechazo a la entropía arbitraria; construyendo permanencia desde la lógica.
+              Computer Systems Engineering student (7th semester) with practical experience since 4th semester. Building reliable backend services, database schemas, and educational compilers, while exploring applied ML for business and education.
             </p>
           </div>
           <div class="hero-foot__actions">
-            <a class="btn-primary" href="#proyectos">[ 01 // EXPLORAR PROYECTOS ] →</a>
-            <a class="btn-secondary" href="#manifiesto">[ 02 // LEER MANIFIESTO ] ↓</a>
+            <a class="btn-primary" href="#proyectos">[ 01 // EXPLORE PROJECTS ] →</a>
+            <a class="btn-secondary" href="#experiencia">[ 02 // WORK EXPERIENCE ] ↓</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════ MARQUEE ══════════ -->
-    <div class="marquee-band" aria-hidden="true">
-      <div class="marquee-track">
-        <!-- Set duplicated for seamless loop -->
-        <span class="marquee-item">SISTEMAS DISTRIBUIDOS</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">LÓGICA FORMAL</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">ARQUITECTURA DE SOFTWARE</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">INGENIERÍA EN COMPUTACIÓN</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">OPEN SOURCE</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">CÓDIGO DETERMINISTA</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">SISTEMAS DISTRIBUIDOS</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">LÓGICA FORMAL</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">ARQUITECTURA DE SOFTWARE</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">INGENIERÍA EN COMPUTACIÓN</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">OPEN SOURCE</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-        <span class="marquee-item">CÓDIGO DETERMINISTA</span>
-        <span class="marquee-item marquee-item--accent">·</span>
-      </div>
-    </div>
 
     <!-- ══════════ PROJECTS ══════════ -->
     <section id="proyectos" class="section" aria-labelledby="proyectos-title">
       <div class="section-header reveal">
         <div>
-          <div class="section-label">// 02 · ESPECIFICACIONES TÉCNICAS</div>
-          <h2 class="section-title" id="proyectos-title">NOTABLE<br>PROYECTS</h2>
+          <div class="section-label">// 01 · FEATURED PROJECTS</div>
+          <h2 class="section-title" id="proyectos-title">NOTABLE<br>PROJECTS</h2>
         </div>
-        <span class="section-count">REGISTRO DE ARTEFACTOS · v2.5.0</span>
+        <span class="section-count">ARTIFACT REGISTRY · v2.6.0</span>
       </div>
 
       <div class="project-list reveal-stagger" role="list">
 
         <!-- Project 01 -->
-        <article class="project-row" role="listitem" tabindex="0" aria-label="Proyecto KRONOS RUNTIME">
+        <article class="project-row" role="listitem" tabindex="0" aria-label="Project RE Programming Language">
           <div class="project-row__id">
             <span>[ SYS.01 ]</span>
-            <span class="project-row__id-num">// KERNEL</span>
+            <span class="project-row__id-num">// LANGUAGE</span>
           </div>
           <div class="project-row__main">
-            <h3 class="project-row__title">RE | LENGUAJE</h3>
-            <p class="project-row__desc">RE is my own lenguaje of codiing, it born with the mision of take the flexibility and easy use of python and the security of strong types of C# and Java</p>
+            <h3 class="project-row__title">RE | PROGRAMMING LANGUAGE</h3>
+            <p class="project-row__desc">Proprietary programming language built to unite the syntactic ergonomics and expressiveness of Python with the type safety, compile-time validation, and reliability of C# and Java.</p>
           </div>
           <div class="project-row__tags">
-            <span class="project-tag">Typescript</span>
+            <span class="project-tag">TypeScript</span>
             <span class="project-tag">ANTLR4</span>
-          <a class="project-row__link" href="#" aria-label="Ver especificación de KRONOS RUNTIME">[ VER SPEC → ]</a>
+            <span class="project-tag">Compiler Design</span>
+          </div>
+          <a class="project-row__link" href="https://centipede-kohl.vercel.app/re_lenguaje.html" target="_blank" rel="noopener" aria-label="View RE Language specification">[ VIEW SPEC → ]</a>
         </article>
 
         <!-- Project 02 -->
-        <article class="project-row" role="listitem" tabindex="0" aria-label="Proyecto BABEL PROTOCOL">
+        <article class="project-row" role="listitem" tabindex="0" aria-label="Project Babel Ecosystem">
           <div class="project-row__id">
             <span>[ SYS.02 ]</span>
-            <span class="project-row__id-num">// RED</span>
+            <span class="project-row__id-num">// ECOSYSTEM</span>
           </div>
           <div class="project-row__main">
-            <h3 class="project-row__title">BABEL PROYECT</h3>
-            <p class="project-row__desc">There consists in the union of my own lenguaje of programing and my own IDE with the capacity of make code based
-              on a didactic outline </p>
+            <h3 class="project-row__title">BABEL PROJECT &amp; IDE</h3>
+            <p class="project-row__desc">Integrated programming language and web-based IDE designed for didactic step-by-step code execution, syntax visualization, and structured runtime exploration.</p>
           </div>
           <div class="project-row__tags">
-            <span class="project-tag">Typescript</span>
-            <span class="project-tag">ANTLR4</span>
-            <span class="project-tag">HTML/CSS/JS</span>
+            <span class="project-tag">TypeScript</span>
             <span class="project-tag">Rust</span>
+            <span class="project-tag">ANTLR4</span>
+            <span class="project-tag">Web Standards</span>
           </div>
-          <a class="project-row__link" href="#" aria-label="Ver especificación de BABEL PROTOCOL">[ VER SPEC → ]</a>
+          <a class="project-row__link" href="https://centipede-kohl.vercel.app/" target="_blank" rel="noopener" aria-label="View Babel live demo">[ VIEW DEMO → ]</a>
         </article>
 
-        <!-- Project 04 -->
-        <article class="project-row" role="listitem" tabindex="0" aria-label="Proyecto FORMA DSL">
+        <!-- Project 03 -->
+        <article class="project-row" role="listitem" tabindex="0" aria-label="Project Karuna Analytics">
           <div class="project-row__id">
-            <span>[ SYS.04 ]</span>
-            <span class="project-row__id-num">// LENGUAJE</span>
+            <span>[ SYS.03 ]</span>
+            <span class="project-row__id-num">// ML &amp; EDTECH</span>
           </div>
           <div class="project-row__main">
-            <h3 class="project-row__title">KARUNA</h3>
-            <p class="project-row__desc">This proyect borned in a hackaton and then concoursed in a INNOVA TEC, this proyect brings togother various ML models and copy your information of google classroom
-              with the mision to review students perfomance and the evolution in the homeworks and exams
-            </p>
+            <h3 class="project-row__title">KARUNA ANALYTICS</h3>
+            <p class="project-row__desc">Award-winning student hackathon &amp; INNOVA TEC project. Integrates baseline machine learning models with Google Classroom data to assess student academic trajectories, performance progression, and early intervention signals.</p>
           </div>
           <div class="project-row__tags">
             <span class="project-tag">Python</span>
+            <span class="project-tag">Applied ML (Student)</span>
             <span class="project-tag">Rust</span>
-            <span class="project-tag">HTML/CSS/JS</span>
             <span class="project-tag">SQLite</span>
           </div>
-          <a class="project-row__link" href="#" aria-label="Ver especificación de FORMA DSL">[ VER SPEC → ]</a>
+          <a class="project-row__link" href="https://github.com/zara-te05/Karuna" target="_blank" rel="noopener" aria-label="View Karuna repository">[ VIEW REPO → ]</a>
         </article>
 
-        <!-- Project 05 -->
-        <article class="project-row" role="listitem" tabindex="0" aria-label="Proyecto AXIS INFRA">
+        <!-- Project 04 -->
+        <article class="project-row" role="listitem" tabindex="0" aria-label="Project Marga Version Control">
           <div class="project-row__id">
-            <span>[ SYS.05 ]</span>
-            <span class="project-row__id-num">// INFRA</span>
+            <span>[ SYS.04 ]</span>
+            <span class="project-row__id-num">// DATA INFRA</span>
           </div>
           <div class="project-row__main">
-            <h3 class="project-row__title">Marga</h3>
-            <p class="project-row__desc">Marga is a control version tool specializated in SQL and NoSQL databses, it can save your querys and migrations, have a map of changes and who changed what</p>
+            <h3 class="project-row__title">MARGA</h3>
+            <p class="project-row__desc">Specialized schema and query version-control CLI tool for relational and NoSQL databases. Tracks migrations, query histories, and generates an audit trail of schema changes and author attribution.</p>
           </div>
           <div class="project-row__tags">
             <span class="project-tag">Go</span>
-            <span class="project-tag">Cobra</span>
-            <span class="project-tag">Postgrest SQL</span>
-            <span class="project-tag">HTML/CSS/JS</span>
+            <span class="project-tag">Cobra CLI</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">DevTools</span>
           </div>
-          <a class="project-row__link" href="#" aria-label="Ver especificación de AXIS INFRA">[ VER SPEC → ]</a>
+          <a class="project-row__link" href="https://github.com/zara-te05" target="_blank" rel="noopener" aria-label="View Marga on GitHub">[ VIEW GITHUB → ]</a>
         </article>
 
       </div>
     </section>
 
-    <!-- ══════════ KNOWLEDGE ══════════ -->
+    <!-- ══════════ EXPERIENCE ══════════ -->
+    <section id="experiencia" class="section" aria-labelledby="experiencia-title">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">// 02 · PROFESSIONAL TRAJECTORY</div>
+          <h2 class="section-title" id="experiencia-title">WORK<br>EXPERIENCE</h2>
+        </div>
+        <span class="section-count">CHRONOLOGY OF ROLES</span>
+      </div>
+
+      <div class="timeline reveal-stagger">
+
+        <!-- Entry 1 -->
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">Apr 2025</span>
+            <span class="timeline-date">Aug 2025</span>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-role">Junior Backend Developer</div>
+            <div class="timeline-company">
+              IESEN
+              <span class="badge">PART-TIME / INTERNSHIP</span>
+            </div>
+            <p class="timeline-desc">
+              Developed backend services and REST API endpoints in C# / ASP.NET to manage inventory records, movement tracking, and dispatch logs for educational lab equipment.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">C# / ASP.NET</span>
+              <span class="timeline-tag">MySQL</span>
+              <span class="timeline-tag">REST APIs</span>
+              <span class="timeline-tag">Backend Services</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">Oct 2025</span>
+            <span class="timeline-date">Feb 2026</span>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-role">Undergraduate Researcher &amp; Data Analyst</div>
+            <div class="timeline-company">
+              Instituto Tecnológico Superior de Lerdo (ITSL)
+              <span class="badge">ACADEMIC RESEARCH</span>
+            </div>
+            <p class="timeline-desc">
+              Analyzed student retention data and built baseline machine learning classification models in Python to identify academic and socioeconomic risk factors related to university dropout.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Python</span>
+              <span class="timeline-tag">FastAPI</span>
+              <span class="timeline-tag">scikit-learn</span>
+              <span class="timeline-tag">Pandas</span>
+              <span class="timeline-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">Apr 2026</span>
+            <span class="timeline-date">Jul 2026</span>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-role">Backend Developer (Contractor)</div>
+            <div class="timeline-company">
+              AUTOSEN / GARZA LEAL
+              <span class="badge">STUDENT CONTRACT</span>
+            </div>
+            <p class="timeline-desc">
+              Collaborated on a fleet maintenance web platform, building backend CRUD endpoints and database queries to track repair workflows, spare parts stock, and service delivery status.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">C# / ASP.NET</span>
+              <span class="timeline-tag">Flutter / Dart</span>
+              <span class="timeline-tag">PostgreSQL</span>
+              <span class="timeline-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 4 -->
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">Sep 2026</span>
+            <span class="timeline-date">Mar 2027</span>
+          </div>
+          <div class="timeline-right">
+            <div class="timeline-role">QA Automation Intern</div>
+            <div class="timeline-company">
+              Narvalla
+              <span class="badge">INTERNSHIP</span>
+            </div>
+            <p class="timeline-desc">
+              Created end-to-end automated UI and regression test scripts using Maestro CLI and Python. Assisted in integrating test runs into GitHub Actions pipelines for faster feedback.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Python</span>
+              <span class="timeline-tag">Maestro CLI</span>
+              <span class="timeline-tag">GitHub Actions</span>
+              <span class="timeline-tag">CI/CD Automation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ RESEARCH ══════════ -->
+    <section id="investigaciones" class="section" aria-labelledby="investigaciones-title">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">// 03 · RESEARCH &amp; ACADEMIC INQUIRY</div>
+          <h2 class="section-title" id="investigaciones-title">RESEARCH<br>&amp; PAPERS</h2>
+        </div>
+        <span class="section-count">STUDENT PAPERS &amp; EXPERIMENTAL WORK</span>
+      </div>
+
+      <div class="research-grid reveal-stagger">
+
+        <!-- Inv 01 -->
+        <div class="research-card book-panel">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <div class="research-card__header">
+            <span class="research-card__id">[ INV.01 // LANGUAGE TOOLS ]</span>
+            <span class="research-card__status">PROTOTYPED</span>
+          </div>
+          <h3 class="research-card__title">Design of Strong Type Systems for Educational DSLs</h3>
+          <p class="research-card__body">Student exploration on deterministic parsing, abstract syntax tree (AST) construction, and type checking designed to reduce beginner confusion without sacrificing compiler checks. Serves as the technical core behind the RE language and Babel IDE.</p>
+          <div class="research-card__meta">
+            <div>FIELD: <strong>Programming Languages · Compilers</strong></div>
+            <div>STACK: <strong>TypeScript · ANTLR4 · Context-Free Grammars</strong></div>
+            <div>OUTPUT: <strong>Specification &amp; Prototype for RE &amp; Babel IDE</strong></div>
+          </div>
+        </div>
+
+        <!-- Inv 02 -->
+        <div class="research-card book-panel">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <div class="research-card__header">
+            <span class="research-card__id">[ INV.02 // STUDENT ML STUDY ]</span>
+            <span class="research-card__status active">IN PROGRESS</span>
+          </div>
+          <h3 class="research-card__title">The Origin of the Dependent: Student Dropout Risk Modeling via Applied ML</h3>
+          <p class="research-card__body">Undergraduate research initiative analyzing socioeconomic indicators, family background, and academic history using baseline classification algorithms in Python. Focuses on feature importance and early warning metrics to support university retention programs.</p>
+          <div class="research-card__meta">
+            <div>FIELD: <strong>Undergraduate ML · Exploratory Data Analysis · Higher Ed</strong></div>
+            <div>STACK: <strong>Python · scikit-learn · Pandas · PostgreSQL</strong></div>
+            <div>STATUS: <strong>Prototype v1.0 · Exploratory analysis</strong></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ SKILLS & TECHNICAL STACK ══════════ -->
     <section id="conocimientos" class="section" aria-labelledby="conocimientos-title">
       <div class="section-header reveal">
         <div>
-          <div class="section-label">// 03 · KNOWLEDGE BASE</div>
-          <h2 class="section-title" id="conocimientos-title">TECHNICAL <br>STACK</h2>
+          <div class="section-label">// 04 · TECHNICAL SKILLS &amp; ACADEMIC FOCUS</div>
+          <h2 class="section-title" id="conocimientos-title">CORE<br>STACK</h2>
+        </div>
+        <span class="section-count">COMPETENCY MATRIX · CS UNDERGRAD</span>
+      </div>
+
+      <!-- Interest areas strip -->
+      <div class="interest-strip reveal-stagger">
+        <div class="interest-cell">
+          <div class="interest-cell__num">01 // PRIMARY FOCUS</div>
+          <div class="interest-cell__title">Backend Services &amp; APIs</div>
+          <p class="interest-cell__body">Developing reliable service logic, REST endpoints, and database interactions. Comfortable working with C#/.NET, Python, and Go for backend tasks, migrations, and developer utilities.</p>
+          <div class="interest-cell__tags">
+            <span class="interest-tag">REST APIs</span>
+            <span class="interest-tag">C# / .NET Core</span>
+            <span class="interest-tag">PostgreSQL &amp; MySQL</span>
+            <span class="interest-tag">Database Migrations</span>
+          </div>
+        </div>
+
+        <div class="interest-cell">
+          <div class="interest-cell__num">02 // SYSTEMS &amp; PARSING</div>
+          <div class="interest-cell__title">Compilers &amp; CLI Tools</div>
+          <p class="interest-cell__body">Driven by curiosity about how languages work under the hood: grammar definitions, lexical analysis with ANTLR4, AST inspection, and creating command-line tools to automate workflows.</p>
+          <div class="interest-cell__tags">
+            <span class="interest-tag">ANTLR4</span>
+            <span class="interest-tag">AST / Parsing</span>
+            <span class="interest-tag">Go / Cobra CLI</span>
+            <span class="interest-tag">Test Automation</span>
+          </div>
+        </div>
+
+        <div class="interest-cell">
+          <div class="interest-cell__num">03 // UNDERGRADUATE STUDY</div>
+          <div class="interest-cell__title">Applied ML &amp; Data Analysis</div>
+          <p class="interest-cell__body">Approaching machine learning from a pragmatic student angle: preparing datasets, running exploratory data analysis (EDA), and training baseline models (classification, regression) to understand data trends.</p>
+          <div class="interest-cell__tags">
+            <span class="interest-tag">scikit-learn</span>
+            <span class="interest-tag">Pandas &amp; NumPy</span>
+            <span class="interest-tag">Exploratory Data Analysis</span>
+            <span class="interest-tag">Model Evaluation</span>
+          </div>
         </div>
       </div>
 
       <div class="knowledge-grid reveal-stagger">
 
         <div class="knowledge-cell">
-          <div class="knowledge-cell__cat">Lenguajes</div>
+          <div class="knowledge-cell__cat">Programming Languages</div>
           <div class="knowledge-cell__title">Core Languages</div>
           <div class="knowledge-cell__items">
-            <div class="knowledge-item">C# & ADO.NET<div class="knowledge-item__bar" style="--pct:92%"></div></div>
+            <div class="knowledge-item">C# &amp; .NET Core<div class="knowledge-item__bar" style="--pct:92%"></div></div>
             <div class="knowledge-item">Python<div class="knowledge-item__bar" style="--pct:88%"></div></div>
-            <div class="knowledge-item">Go<div class="knowledge-item__bar" style="--pct:82%"></div></div>
-            <div class="knowledge-item">C/C++<div class="knowledge-item__bar" style="--pct:85%"></div></div>
-            <div class="knowledge-item">SQL Server(T-SQL) & PostgresSQL(PL/pgSQL)<div class="knowledge-item__bar" style="--pct:78%"></div></div>
-            <div class="knowledge-item">Rust/Tauri<div class="knowledge-item__bar" style="--pct:78%"></div></div>
+            <div class="knowledge-item">Go (Golang)<div class="knowledge-item__bar" style="--pct:82%"></div></div>
+            <div class="knowledge-item">SQL (PostgreSQL &amp; MySQL / SQL Server)<div class="knowledge-item__bar" style="--pct:84%"></div></div>
+            <div class="knowledge-item">TypeScript / JavaScript<div class="knowledge-item__bar" style="--pct:80%"></div></div>
+            <div class="knowledge-item">Rust (Exploratory / CLI)<div class="knowledge-item__bar" style="--pct:70%"></div></div>
           </div>
         </div>
 
         <div class="knowledge-cell">
-          <div class="knowledge-cell__cat">My own Investigation</div>
-          <div class="knowledge-cell__title">The origin of the dependent</div>
-        </div>
-
-        <div class="knowledge-cell">
-          <div class="knowledge-cell__cat">Systems</div>
-          <div class="knowledge-cell__title">OS &amp; Infra</div>
+          <div class="knowledge-cell__cat">Infrastructure &amp; DevOps</div>
+          <div class="knowledge-cell__title">Operating Systems &amp; Tooling</div>
           <div class="knowledge-cell__items">
-            <div class="knowledge-item">Linux<div class="knowledge-item__bar" style="--pct:88%"></div></div>
-            <div class="knowledge-item">Docker<div class="knowledge-item__bar" style="--pct:90%"></div></div>
-            <div class="knowledge-item">Git/Github<div class="knowledge-item__bar" style="--pct:82%"></div></div>
-            <div class="knowledge-item">Clean Architecture<div class="knowledge-item__bar" style="--pct:75%"></div></div>
+            <div class="knowledge-item">Linux (Debian / Arch / Ubuntu)<div class="knowledge-item__bar" style="--pct:88%"></div></div>
+            <div class="knowledge-item">Docker &amp; Containerization<div class="knowledge-item__bar" style="--pct:85%"></div></div>
+            <div class="knowledge-item">Git, GitHub &amp; CI/CD Actions<div class="knowledge-item__bar" style="--pct:88%"></div></div>
+            <div class="knowledge-item">Clean Architecture &amp; SOLID<div class="knowledge-item__bar" style="--pct:82%"></div></div>
           </div>
         </div>
 
         <div class="knowledge-cell">
-          <div class="knowledge-cell__cat">Arquitectura</div>
-          <div class="knowledge-cell__title">Design Patterns</div>
+          <div class="knowledge-cell__cat">Data &amp; Applied ML (Student)</div>
+          <div class="knowledge-cell__title">Libraries &amp; Analytics</div>
           <div class="knowledge-cell__items">
-            <div class="knowledge-item">Distributed Systems<div class="knowledge-item__bar" style="--pct:90%"></div></div>
-            <div class="knowledge-item">Event Sourcing<div class="knowledge-item__bar" style="--pct:84%"></div></div>
-            <div class="knowledge-item">QA testing<div class="knowledge-item__bar" style="--pct:84%"></div></div>
+            <div class="knowledge-item">Pandas &amp; NumPy<div class="knowledge-item__bar" style="--pct:86%"></div></div>
+            <div class="knowledge-item">scikit-learn (Statistical ML)<div class="knowledge-item__bar" style="--pct:80%"></div></div>
+            <div class="knowledge-item">FastAPI (Model Serving)<div class="knowledge-item__bar" style="--pct:82%"></div></div>
+            <div class="knowledge-item">Data Validation &amp; Feature Pipelines<div class="knowledge-item__bar" style="--pct:76%"></div></div>
           </div>
         </div>
 
-
-
         <div class="knowledge-cell">
-          <div class="knowledge-cell__cat">Investigation</div>
-          <div class="knowledge-cell__title">Research Areas</div>
+          <div class="knowledge-cell__cat">Quality &amp; Testing</div>
+          <div class="knowledge-cell__title">Automation &amp; Verification</div>
           <div class="knowledge-cell__items">
-            <div class="knowledge-item">Compiler Theory<div class="knowledge-item__bar" style="--pct:78%"></div></div>
-            <div class="knowledge-item">Type Systems<div class="knowledge-item__bar" style="--pct:72%"></div></div>
+            <div class="knowledge-item">Unit &amp; Integration Testing<div class="knowledge-item__bar" style="--pct:85%"></div></div>
+            <div class="knowledge-item">Maestro CLI (Automated Flows)<div class="knowledge-item__bar" style="--pct:80%"></div></div>
+            <div class="knowledge-item">Compiler Lexing/Parsing (ANTLR4)<div class="knowledge-item__bar" style="--pct:78%"></div></div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ══════════ ABOUT ══════════ -->
+    <!-- ══════════ DIGITAL ECOSYSTEM / WEB PORTALS ══════════ -->
+    <section id="ecosistema" class="section" aria-labelledby="ecosistema-title">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">// 05 · WEB ECOSYSTEM &amp; SITES</div>
+          <h2 class="section-title" id="ecosistema-title">DIGITAL<br>ECOSYSTEM</h2>
+        </div>
+        <span class="section-count">DIRECT ACCESS PORTAL</span>
+      </div>
+
+      <div class="web-network-grid reveal-stagger">
+
+        <!-- Web 01: Babel actual -->
+        <article class="web-card book-panel" onclick="window.open('https://centipede-kohl.vercel.app/', '_blank')">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.01 // MAIN HUB ]</span>
+              <span class="web-card__status">ONLINE</span>
+            </div>
+            <h3 class="web-card__name">BABEL PROJECT</h3>
+            <div class="web-card__role">CONCEPTUAL FRAMEWORK &amp; HUB</div>
+            <p class="web-card__desc">
+              Foundational web space exploring software architecture philosophy, open-source engineering, and formal computational thinking.
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">VERCEL</span>
+              <span class="web-card__tag">BABEL</span>
+              <span class="web-card__tag">LIVE</span>
+            </div>
+            <a class="web-card__action" href="https://centipede-kohl.vercel.app/" target="_blank" rel="noopener">[ VISIT SITE ↗ ]</a>
+          </div>
+        </article>
+
+        <!-- Web 02: RE Lenguaje -->
+        <article class="web-card book-panel" onclick="window.open('https://centipede-kohl.vercel.app/re_lenguaje.html', '_blank')">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.02 // LANGUAGE ]</span>
+              <span class="web-card__status">ONLINE</span>
+            </div>
+            <h3 class="web-card__name">RE // DOCS &amp; SPEC</h3>
+            <div class="web-card__role">LANGUAGE SPECIFICATION</div>
+            <p class="web-card__desc">
+              Dedicated documentation portal detailing syntax, formal context-free grammar, semantics, and reference manual for the RE language.
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">GRAMMAR</span>
+              <span class="web-card__tag">DOCS</span>
+              <span class="web-card__tag">ANTLR4</span>
+            </div>
+            <a class="web-card__action" href="https://centipede-kohl.vercel.app/re_lenguaje.html" target="_blank" rel="noopener">[ VISIT SPEC ↗ ]</a>
+          </div>
+        </article>
+
+        <!-- Web 03: Logos Editor / IDE -->
+        <article class="web-card book-panel" onclick="window.open('https://centipede-kohl.vercel.app/logos-editor.html', '_blank')">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.03 // ENVIRONMENT ]</span>
+              <span class="web-card__status">ONLINE</span>
+            </div>
+            <h3 class="web-card__name">LOGOS EDITOR</h3>
+            <div class="web-card__role">WEB IDE &amp; SYNTAX WORKBENCH</div>
+            <p class="web-card__desc">
+              In-browser developer workbench for syntax experimentation, AST inspection, static validation, and didactic program tracing.
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">WEB IDE</span>
+              <span class="web-card__tag">PARSER</span>
+              <span class="web-card__tag">DEVTOOLS</span>
+            </div>
+            <a class="web-card__action" href="https://centipede-kohl.vercel.app/logos-editor.html" target="_blank" rel="noopener">[ LAUNCH IDE ↗ ]</a>
+          </div>
+        </article>
+
+        <!-- Web 04: Karuna Analytics Repo -->
+        <article class="web-card book-panel" onclick="window.open('https://github.com/zara-te05/Karuna', '_blank')">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.04 // GITHUB REPO ]</span>
+              <span class="web-card__status">ACTIVE REPO</span>
+            </div>
+            <h3 class="web-card__name">KARUNA EDTECH ML</h3>
+            <div class="web-card__role">STUDENT RETENTION PREDICTION</div>
+            <p class="web-card__desc">
+              Public codebase for the student hackathon award winner. Integrates student educational metrics with exploratory machine learning models.
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">GITHUB</span>
+              <span class="web-card__tag">PYTHON</span>
+              <span class="web-card__tag">APPLIED ML</span>
+            </div>
+            <a class="web-card__action" href="https://github.com/zara-te05/Karuna" target="_blank" rel="noopener">[ VIEW CODE ↗ ]</a>
+          </div>
+        </article>
+
+        <!-- Web 05: GitHub Profile -->
+        <article class="web-card book-panel" onclick="window.open('https://github.com/zara-te05', '_blank')">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.05 // GITHUB PROFILE ]</span>
+              <span class="web-card__status">ACTIVE</span>
+            </div>
+            <h3 class="web-card__name">GITHUB ECOSYSTEM</h3>
+            <div class="web-card__role">OPEN SOURCE REPOSITORIES &amp; COMMITS</div>
+            <p class="web-card__desc">
+              Direct access to public repositories including language prototypes, Go CLI utilities, backend microservices, and research notebooks.
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">OPEN SOURCE</span>
+              <span class="web-card__tag">COMMITS</span>
+              <span class="web-card__tag">PROJECTS</span>
+            </div>
+            <a class="web-card__action" href="https://github.com/zara-te05" target="_blank" rel="noopener">[ VIEW PROFILE ↗ ]</a>
+          </div>
+        </article>
+
+        <!-- Web 06: Staging Slot -->
+        <article class="web-card book-panel" style="border-style: dashed;">
+          <span class="corner-mark corner-tl"></span>
+          <span class="corner-mark corner-tr"></span>
+          <span class="corner-mark corner-bl"></span>
+          <span class="corner-mark corner-br"></span>
+          <div>
+            <div class="web-card__header">
+              <span class="web-card__idx">[ WEB.06 // RESEARCH LAB ]</span>
+              <span class="web-card__status" style="border-color: var(--grey-40); color: var(--grey-60);">IN DEVELOPMENT</span>
+            </div>
+            <h3 class="web-card__name">STUDENT RETENTION LAB</h3>
+            <div class="web-card__role">EXPLORATORY ML INTERFACE</div>
+            <p class="web-card__desc">
+              Undergraduate testbed for exploratory predictive models and socioeconomic risk factor visualization (The Origin of the Dependent).
+            </p>
+          </div>
+          <div class="web-card__foot">
+            <div class="web-card__tags">
+              <span class="web-card__tag">STAGING</span>
+              <span class="web-card__tag">UNDERGRAD ML</span>
+            </div>
+            <span class="web-card__action" style="opacity: 0.5; pointer-events: none;">[ IN PROGRESS ]</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════ ABOUT ME ══════════ -->
     <section id="sobre-mi" class="section" aria-labelledby="sobre-mi-title">
       <div class="section-header reveal">
         <div>
-          <div class="section-label">// 04 · PERFIL DEL INGENIERO</div>
-          <h2 class="section-title" id="sobre-mi-title">SOBRE<br>MÍ</h2>
+          <div class="section-label">// 06 · ENGINEER PROFILE</div>
+          <h2 class="section-title" id="sobre-mi-title">ABOUT<br>ME</h2>
         </div>
+        <span class="section-count">BIOGRAPHY &amp; ACADEMIC BACKGROUND</span>
       </div>
 
       <div class="about-grid reveal">
         <div class="about-main">
           <h3 class="about-main__name">
-            DIEGO ANGEL<br>
-            <em>ZARATE VAZQUEZ</em>
+            DIEGO ÁNGEL<br>
+            <em>ZÁRATE VÁZQUEZ</em>
           </h3>
           <p>
-            Ingeniero en Sistemas Computacionales con enfoque en arquitectura de software, sistemas distribuidos y verificación formal. Entiendo el software no como un producto sino como una disciplina: requiere rigor, humildad y capacidad de pensar en escalas de tiempo largas.
+            I am a 7th-semester Computer Systems Engineering student with a strong interest in backend development, systems programming, and applied data analysis. Since my 4th semester, I have actively sought out real-world projects, internships, and freelance contracts to complement my academic coursework with hands-on engineering experience.
           </p>
           <p>
-            Mi trabajo se sitúa en la intersección entre la ingeniería de bajo nivel y el pensamiento conceptual de alto nivel. Me interesan los problemas que exigen tanto comprender los mecanismos internos de una CPU como razonar sobre la corrección de un protocolo distribuido.
+            My main work focuses on building clean, maintainable backend services and developer utilities in C#/.NET, Python, and Go. Outside of standard web services, I enjoy exploring the fundamentals of computer science — from parsing grammars and building language prototypes like RE to exploring baseline machine learning models for university student retention.
           </p>
           <p>
-            Fuera del código construyo sistemas de pensamiento: leo sobre teoría de computación, diseño de lenguajes de programación y arquitectura clásica. Creo que los mejores ingenieros de software son también, de algún modo, filósofos de la máquina.
+            I value code clarity, disciplined version control, continuous learning, and working with teams that care about solid technical foundations.
           </p>
         </div>
 
         <div class="about-aside">
           <div class="about-stat">
-            <div class="about-stat__label">Ubicación</div>
-            <div class="about-stat__value">México</div>
-            <div class="about-stat__sub">LATAM · UTC−6</div>
+            <div class="about-stat__label">Location</div>
+            <div class="about-stat__value">Gómez Palacio, Mexico</div>
+            <div class="about-stat__sub">LATAM · UTC−6 (CST)</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat__label">Disponibilidad</div>
-            <div class="about-stat__value">Disponible</div>
-            <div class="about-stat__sub">FREELANCE &amp; COLABORACIÓN</div>
+            <div class="about-stat__label">Education / Status</div>
+            <div class="about-stat__value">CS Student (7th Sem)</div>
+            <div class="about-stat__sub">OPEN TO JUNIOR / INTERN ROLES</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat__label">Enfoque</div>
-            <div class="about-stat__value">Sistemas &amp; Backend</div>
-            <div class="about-stat__sub">LOW-LEVEL · DISTRIBUTED · COMPILER</div>
+            <div class="about-stat__label">Core Areas</div>
+            <div class="about-stat__value">Backend &amp; CLI Tools</div>
+            <div class="about-stat__sub">C# · PYTHON · GO · POSTGRESQL</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat__label">Idiomas</div>
-            <div class="about-stat__value">ES / EN</div>
-            <div class="about-stat__sub">ESPAÑOL NATIVO · INGLÉS TÉCNICO</div>
+            <div class="about-stat__label">Languages</div>
+            <div class="about-stat__value">Spanish / English</div>
+            <div class="about-stat__sub">NATIVE SPANISH · B2 PROFESSIONAL ENGLISH</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat__label">Licencia de código</div>
+            <div class="about-stat__label">Open Source License</div>
             <div class="about-stat__value">MIT / Apache-2.0</div>
-            <div class="about-stat__sub">OPEN SOURCE POR DEFECTO</div>
+            <div class="about-stat__sub">DEFAULT CODE STANDARD</div>
           </div>
         </div>
       </div>
@@ -1408,58 +2212,58 @@
 
     <!-- ══════════ CONTACT ══════════ -->
     <section id="contacto" class="section" aria-labelledby="contacto-title">
-      <div class="section-label reveal">// 05 · CANAL DE COMUNICACIÓN</div>
+      <div class="section-label reveal">// 07 · COMMUNICATION CHANNEL</div>
 
       <h2 class="contact-headline reveal" id="contacto-title">
-        INICIAR<br>
-        <span class="outline">DIÁLOGO</span>
+        START A<br>
+        <span class="outline">DIALOGUE</span>
       </h2>
 
       <div class="contact-body reveal">
         <div class="contact-text">
           <p>
-            Si tienes un problema técnico que requiere pensar desde los fundamentos, una auditoría de arquitectura, o simplemente quieres conversar sobre sistemas, protocolos o diseño de software — este es el lugar.
+            I am currently open to junior backend roles, software engineering internships, or technical collaborations. If you have an opening on your engineering team, need help building reliable backend services, or would like to discuss compilers, devtools, or student ML projects — feel free to reach out.
           </p>
-          <p>No acepto trabajo de cualquier tipo: me interesan los proyectos que desafían, que requieren rigor y que dejan algo duradero.</p>
+          <p>I am always excited to learn, receive feedback, and contribute to teams with high engineering standards.</p>
 
           <div class="contact-actions" style="margin-top: 2.5rem;">
             <a class="contact-link" href="mailto:correo@ejemplo.com">
-              <span>→ CORREO ELECTRÓNICO</span>
+              <span>→ EMAIL DIRECTORY</span>
               <span class="contact-link__arrow">↗</span>
             </a>
-            <a class="contact-link" href="https://github.com" target="_blank" rel="noopener">
-              <span>→ GITHUB</span>
+            <a class="contact-link" href="https://github.com/zara-te05" target="_blank" rel="noopener">
+              <span>→ GITHUB REPOSITORIES</span>
               <span class="contact-link__arrow">↗</span>
             </a>
             <a class="contact-link" href="https://linkedin.com" target="_blank" rel="noopener">
-              <span>→ LINKEDIN</span>
+              <span>→ LINKEDIN NETWORK</span>
               <span class="contact-link__arrow">↗</span>
             </a>
             <a class="contact-link" href="#" download>
-              <span>→ DESCARGAR CV</span>
+              <span>→ DOWNLOAD RESUME (CV)</span>
               <span class="contact-link__arrow">↓</span>
             </a>
           </div>
         </div>
 
-        <form class="contact-form" aria-label="Formulario de contacto" novalidate>
+        <form class="contact-form" aria-label="Contact Form" novalidate>
           <div class="form-group">
-            <label class="form-label" for="f-name">NOMBRE</label>
-            <input class="form-input" id="f-name" type="text" name="name" placeholder="Tu nombre" autocomplete="name" required />
+            <label class="form-label" for="f-name">YOUR NAME</label>
+            <input class="form-input" id="f-name" type="text" name="name" placeholder="e.g. Alex Morgan" autocomplete="name" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="f-email">CORREO</label>
-            <input class="form-input" id="f-email" type="email" name="email" placeholder="correo@dominio.com" autocomplete="email" required />
+            <label class="form-label" for="f-email">EMAIL ADDRESS</label>
+            <input class="form-input" id="f-email" type="email" name="email" placeholder="name@domain.com" autocomplete="email" required />
           </div>
           <div class="form-group">
-            <label class="form-label" for="f-subject">ASUNTO</label>
-            <input class="form-input" id="f-subject" type="text" name="subject" placeholder="Descripción breve del proyecto" />
+            <label class="form-label" for="f-subject">SUBJECT</label>
+            <input class="form-input" id="f-subject" type="text" name="subject" placeholder="Project inquiry, role, or technical discussion" />
           </div>
           <div class="form-group">
-            <label class="form-label" for="f-message">MENSAJE</label>
-            <textarea class="form-textarea" id="f-message" name="message" placeholder="Descripción técnica del problema o propuesta..." required></textarea>
+            <label class="form-label" for="f-message">MESSAGE</label>
+            <textarea class="form-textarea" id="f-message" name="message" placeholder="Brief technical summary of your proposal, opportunity, or inquiry..." required></textarea>
           </div>
-          <button class="form-submit" type="submit">[ ENVIAR MENSAJE → ]</button>
+          <button class="form-submit" type="submit">[ SEND MESSAGE → ]</button>
         </form>
       </div>
     </section>
@@ -1469,22 +2273,33 @@
   <!-- ══════════ FOOTER ══════════ -->
   <footer id="site-footer" role="contentinfo">
     <div class="footer-left">
-      <strong>PORTFILE · ISC</strong>
-      <span>© 2026 · TODOS LOS DERECHOS RESERVADOS · MIT LICENSE</span>
-      <span>BUILD: 0x8F3A9E2C · LATAM // GLOBAL_SYNC</span>
+      <strong>PORTFILE · DIEGO ÁNGEL ZÁRATE VÁZQUEZ</strong>
+      <span>© 2026 · ALL RIGHTS RESERVED · MIT LICENSE</span>
+      <span>BUILD: 0x8F3A9E2C · MEXICO // GLOBAL_SYNC</span>
     </div>
-    <nav class="footer-right" aria-label="Navegación de pie de página">
-      <a class="footer-link" href="#hero">INICIO</a>
-      <a class="footer-link" href="#manifiesto">MANIFIESTO</a>
-      <a class="footer-link" href="#proyectos">PROYECTOS</a>
+    <nav class="footer-right" aria-label="Footer Navigation">
+      <a class="footer-link" href="#hero">HOME</a>
+      <a class="footer-link" href="#proyectos">PROJECTS</a>
+      <a class="footer-link" href="#experiencia">EXPERIENCE</a>
+      <a class="footer-link" href="#investigaciones">RESEARCH</a>
       <a class="footer-link" href="#conocimientos">STACK</a>
-      <a class="footer-link" href="#sobre-mi">SOBRE MÍ</a>
-      <a class="footer-link" href="#contacto">CONTACTO</a>
+      <a class="footer-link" href="#ecosistema">ECOSYSTEM</a>
+      <a class="footer-link" href="#sobre-mi">ABOUT ME</a>
+      <a class="footer-link" href="#contacto">CONTACT</a>
     </nav>
   </footer>
 
   <!-- ══════════ SCRIPTS ══════════ -->
   <script>
+    // ── Reading progress bar (editorial / volume style) ──
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('reading-progress');
+      if (!bar) return;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      bar.style.width = `${progress}%`;
+    }, { passive: true });
+
     // ── UTC Clock ──
     (function initClock() {
       const el = document.getElementById('utc-clock');
@@ -1523,7 +2338,7 @@
 
     // ── Active nav link on scroll ──
     (function initActiveNav() {
-      const sections = ['hero','manifiesto','proyectos','conocimientos','sobre-mi','contacto'];
+      const sections = ['hero','proyectos','experiencia','investigaciones','conocimientos','ecosistema','sobre-mi','contacto'];
       const navLinks = document.querySelectorAll('[data-section]');
 
       function setActive(id) {
@@ -1536,7 +2351,7 @@
         entries.forEach(e => {
           if (e.isIntersecting) setActive(e.target.id);
         });
-      }, { threshold: 0.3, rootMargin: '-10% 0px -55% 0px' });
+      }, { threshold: 0.25, rootMargin: '-10% 0px -50% 0px' });
 
       sections.forEach(id => {
         const el = document.getElementById(id);
